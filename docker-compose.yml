@@ -1,0 +1,10 @@
+version: "2.2"  # Consider updating to a newer version like '3.8' for broader compatibility
+
+services:
+  cube:
+    image: cubejs/cube:latest 
+    environment:
+      - CUBEJS_DEV_MODE=true  # Enable development mode (adjust for production)
+    volumes: 
+      - ./conf:/cube/conf  # Mount configuration folder into container
+    network_mode: "host" # Add this cautiously, see explanation below
